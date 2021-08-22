@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GO9-pN-N22">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Exercise View Controller-->
+        <scene sceneID="HYH-Fg-LBC">
+            <objects>
+                <viewController id="GO9-pN-N22" customClass="ExerciseViewController" customModule="Exercises" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="W9q-W1-fYt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s4Q-cB-vbw">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQL-Kj-riK">
+                                <rect key="frame" x="336" y="60" width="62" height="34"/>
+                                <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="KT9-g9-85w" kind="unwind" unwindAction="unwindActionWithUnwindSegue:" id="Bnv-PI-yIu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Bo-5n-e1S">
+                                <rect key="frame" x="336" y="812" width="62" height="34"/>
+                                <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="favoriteButtonPressed:" destination="GO9-pN-N22" eventType="touchUpInside" id="Tlp-Nq-hWQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mlX-iN-yKY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mlX-iN-yKY" firstAttribute="bottom" secondItem="3Bo-5n-e1S" secondAttribute="bottom" constant="16" id="1cy-mH-Hcf"/>
+                            <constraint firstItem="mlX-iN-yKY" firstAttribute="trailing" secondItem="3Bo-5n-e1S" secondAttribute="trailing" constant="16" id="Fwv-bq-JIj"/>
+                            <constraint firstItem="mlX-iN-yKY" firstAttribute="trailing" secondItem="s4Q-cB-vbw" secondAttribute="trailing" id="VmD-NJ-aJl"/>
+                            <constraint firstItem="s4Q-cB-vbw" firstAttribute="top" secondItem="mlX-iN-yKY" secondAttribute="top" id="WMh-oZ-0xB"/>
+                            <constraint firstItem="mlX-iN-yKY" firstAttribute="bottom" secondItem="s4Q-cB-vbw" secondAttribute="bottom" id="a8q-pa-OFD"/>
+                            <constraint firstItem="oQL-Kj-riK" firstAttribute="top" secondItem="mlX-iN-yKY" secondAttribute="top" constant="16" id="fYZ-Ke-WZS"/>
+                            <constraint firstItem="mlX-iN-yKY" firstAttribute="trailing" secondItem="oQL-Kj-riK" secondAttribute="trailing" constant="16" id="gBy-jV-DMx"/>
+                            <constraint firstItem="s4Q-cB-vbw" firstAttribute="leading" secondItem="mlX-iN-yKY" secondAttribute="leading" id="mdp-fX-ZXh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="oQL-Kj-riK" id="eqM-UK-O2z"/>
+                        <outlet property="favoriteButton" destination="3Bo-5n-e1S" id="BHZ-8Q-1oH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GXB-lM-GD6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="KT9-g9-85w" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-304" y="112"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

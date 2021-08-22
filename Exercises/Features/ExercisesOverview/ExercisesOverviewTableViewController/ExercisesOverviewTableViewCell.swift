@@ -1,5 +1,5 @@
 //
-//  ExerciseOverviewCell.swift
+//  ExercisesOverviewTableViewCell.swift
 //  Exercises
 //
 //  Created by William Ellis on 8/22/21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ExerciseOverviewCell: UITableViewCell {
+class ExercisesOverviewTableViewCell: UITableViewCell {
 
     struct Model {
         let exerciseImageURL: URL?

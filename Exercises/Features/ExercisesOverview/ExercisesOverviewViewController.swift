@@ -7,21 +7,22 @@
 
 import UIKit
 
-class ExercisesOverviewViewController: UITableViewController {
+class ExercisesOverviewViewController: UIViewController {
+
+    // MARK: Constants
 
     enum SegueID: String {
-        case exerciseDetail
+        case exercise
     }
 
-    enum CellID {
-        static let exerciseCell = "exerciseOverviewCell"
-    }
+    // Mark: - Outlets
 
-    // MARK: - View Lifecycle
+    @IBOutlet private weak var startTrainingButton: UIButton!
+
+    // MARK: - Lifecycle methods
 
     override func viewDidLoad() {
-        super.viewDidLoad()
-        title = NSLocalizedString("Exercises", comment: "Exercises overview screen title")
+        configureStartTrainingButton()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -31,39 +32,28 @@ class ExercisesOverviewViewController: UITableViewController {
             return
         }
 
-        switch (segueID, segue.destination, sender) {
-        case let (.exerciseDetail, controller as ExerciseDetailViewController, indexPath as IndexPath):
-            controller.title = "Row: \(indexPath.row)"
+        switch (segueID, segue.destination) {
+        case let (.exercise, controller as ExerciseViewController):
+            // TODO: Inject data
+            break
 
         default:
             break
         }
     }
 
-    // MARK: UITableViewDataSource
+    // MARK: - Private instance methods
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10 // TODO
+    func configureStartTrainingButton() {
+        startTrainingButton.tintColor = .white
+        startTrainingButton.layer.cornerRadius = 4.0
+        startTrainingButton.backgroundColor = .systemGreen
+        let title = NSLocalizedString("Start training", comment: "Start training button title")
+        startTrainingButton.setTitle(title, for: .normal)
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CellID.exerciseCell, for: indexPath)
-        guard let exerciseOverviewCell = cell as? ExerciseOverviewCell else {
-            return cell
-        }
+    // MARK: - Actions
 
-        exerciseOverviewCell.configure(with: .init(
-            exerciseImageURL: URL(string: "https://d32oopmphic0po.cloudfront.net/v1/images/body/en-US/body-exercise-4-14.png"),
-            title: "Move hip",
-            isFavorite: false
-        ))
-
-        return exerciseOverviewCell
-    }
-
-    // MARK: UITableViewDelegate
-
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: SegueID.exerciseDetail.rawValue, sender: indexPath)
+    @IBAction func unwindAction(unwindSegue: UIStoryboardSegue) {
     }
 }
