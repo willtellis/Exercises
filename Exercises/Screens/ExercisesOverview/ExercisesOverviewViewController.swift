@@ -44,6 +44,7 @@ class ExercisesOverviewViewController: UIViewController {
             controller.context = context
 
         case let (.exercisesOverviewTable, controller as ExercisesOverviewTableViewController):
+            controller.additionalSafeAreaInsets.bottom = 54 // Additional space for the start button
             controller.context = context
 
         default:
