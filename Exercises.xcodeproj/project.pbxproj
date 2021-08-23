@@ -132,15 +132,14 @@
 			isa = PBXGroup;
 			children = (
 				5EF1F2C426D3B86B00B61004 /* CoreData */,
-				5EC71C8026D2708B009D54DC /* Screens */,
 				5EC71D0C26D2E4D5009D54DC /* ExercisesDataManager */,
 				5EC71CC426D2A641009D54DC /* Networking */,
+				5EC71C8026D2708B009D54DC /* Screens */,
 				5EA23DD926D26B9B003D7DFF /* AppDelegate.swift */,
 				5EA23DDB26D26B9B003D7DFF /* SceneDelegate.swift */,
 				5EA23DE526D26B9E003D7DFF /* Assets.xcassets */,
 				5EA23DE726D26B9E003D7DFF /* LaunchScreen.storyboard */,
 				5EA23DEA26D26B9E003D7DFF /* Info.plist */,
-				5EA23DE226D26B9B003D7DFF /* Exercises.xcdatamodeld */,
 			);
 			path = Exercises;
 			sourceTree = "<group>";
@@ -259,6 +258,7 @@
 		5EF1F2C426D3B86B00B61004 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				5EA23DE226D26B9B003D7DFF /* Exercises.xcdatamodeld */,
 				5EF1F2C526D3B88A00B61004 /* NSFetchedResultsControllerExtensions.swift */,
 			);
 			path = CoreData;
