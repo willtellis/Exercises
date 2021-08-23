@@ -38,11 +38,11 @@ class ExerciseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureCancelButton()
+        setupCancelButton()
         do {
             try fetchedResultsController.performFetch()
             exerciseEntities = fetchedResultsController.fetchedObjects
-            configureTimer()
+            setupTimer()
         } catch {
             fatalError("Core Data fetch error")
         }
@@ -50,7 +50,15 @@ class ExerciseViewController: UIViewController {
 
     // MARK: - Private instance methods
 
-    private func configureTimer() {
+    private func setupCancelButton() {
+        cancelButton.tintColor = .white
+        cancelButton.layer.cornerRadius = 4.0
+        cancelButton.backgroundColor = .systemRed
+        let title = NSLocalizedString("Cancel training", comment: "Cancel training button title")
+        cancelButton.setTitle(title, for: .normal)
+    }
+
+    private func setupTimer() {
         nextExerciseEntityIndex = 0
         let timer = Timer(fire: Date(), interval: 5.0, repeats: true) { [weak self] timer in
             guard let self = self, let exerciseEntities = self.exerciseEntities else {
@@ -71,14 +79,6 @@ class ExerciseViewController: UIViewController {
         configureFavoriteButton(isFavorite: exerciseEntity.isFavorite)
         let url = exerciseEntity.coverImageURL.flatMap { URL(string: $0) }
         configureExerciseImage(url: url)
-    }
-
-    private func configureCancelButton() {
-        cancelButton.tintColor = .white
-        cancelButton.layer.cornerRadius = 4.0
-        cancelButton.backgroundColor = .systemRed
-        let title = NSLocalizedString("Cancel training", comment: "Cancel training button title")
-        cancelButton.setTitle(title, for: .normal)
     }
 
     private func configureFavoriteButton(isFavorite: Bool) {
