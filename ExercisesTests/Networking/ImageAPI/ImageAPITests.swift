@@ -15,14 +15,6 @@ class ImageAPITests: XCTestCase {
     let imageData = UIImage(systemName: "star")!.pngData()!
     let badImageData = "Not an image".data(using: .utf8)!
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
     func testImageTask_NoErrorWithData_CompletesWithSuccess() throws {
         let mockSession = MockURLSession(data: imageData, urlResponse: nil, error: nil)
         let expectation = XCTestExpectation(description: "Expected to complete successfully")
