@@ -64,6 +64,8 @@ class ExercisesOverviewViewController: UIViewController {
 
     // MARK: - Actions
 
-    @IBAction func unwindAction(unwindSegue: UIStoryboardSegue) {
+    /// Allows a presented view controller to request dismissal without dismissing itself or explicitly referencing its presenting view controller
+    @IBAction private func unwindAction(unwindSegue: UIStoryboardSegue) {
+        // Nothing to do, intentionally empty
     }
 }
