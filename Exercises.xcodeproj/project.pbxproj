@@ -81,6 +81,7 @@
 		5EF1F2C526D3B88A00B61004 /* NSFetchedResultsControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSFetchedResultsControllerExtensions.swift; sourceTree = "<group>"; };
 		5EF1F2CB26D3C45A00B61004 /* ExercisesAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesAPITests.swift; sourceTree = "<group>"; };
 		5EF1F2D326D3C88B00B61004 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
+		5EF1F2E126D3D55700B61004 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +112,7 @@
 		5EA23DCD26D26B9B003D7DFF = {
 			isa = PBXGroup;
 			children = (
+				5EF1F2E126D3D55700B61004 /* README.md */,
 				5EA23DD826D26B9B003D7DFF /* Exercises */,
 				5EA23DF226D26B9E003D7DFF /* ExercisesTests */,
 				5EA23DFD26D26B9F003D7DFF /* ExercisesUITests */,
