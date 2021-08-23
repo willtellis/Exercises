@@ -27,7 +27,7 @@
                                 <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="WeV-qi-7jD" kind="presentation" modalPresentationStyle="fullScreen" id="bnX-mZ-PoX"/>
+                                    <segue destination="WeV-qi-7jD" kind="presentation" identifier="exercise" modalPresentationStyle="fullScreen" id="bnX-mZ-PoX"/>
                                 </connections>
                             </button>
                         </subviews>

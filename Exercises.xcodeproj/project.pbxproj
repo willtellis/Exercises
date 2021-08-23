@@ -28,6 +28,7 @@
 		5EC71CE526D2AEBF009D54DC /* ExercisesOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC71CE426D2AEBF009D54DC /* ExercisesOverviewViewController.swift */; };
 		5EC71D0F26D2FB15009D54DC /* ExercisesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC71D0E26D2FB15009D54DC /* ExercisesAPI.swift */; };
 		5EC71D1726D2FED0009D54DC /* ExercisesDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC71D1626D2FED0009D54DC /* ExercisesDataManager.swift */; };
+		5EF1F2C626D3B88A00B61004 /* NSFetchedResultsControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF1F2C526D3B88A00B61004 /* NSFetchedResultsControllerExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		5EC71CE426D2AEBF009D54DC /* ExercisesOverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesOverviewViewController.swift; sourceTree = "<group>"; };
 		5EC71D0E26D2FB15009D54DC /* ExercisesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesAPI.swift; sourceTree = "<group>"; };
 		5EC71D1626D2FED0009D54DC /* ExercisesDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesDataManager.swift; sourceTree = "<group>"; };
+		5EF1F2C526D3B88A00B61004 /* NSFetchedResultsControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSFetchedResultsControllerExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 		5EA23DD826D26B9B003D7DFF /* Exercises */ = {
 			isa = PBXGroup;
 			children = (
+				5EF1F2C426D3B86B00B61004 /* CoreData */,
 				5EC71C8026D2708B009D54DC /* Screens */,
 				5EC71D0C26D2E4D5009D54DC /* ExercisesDataManager */,
 				5EC71CC426D2A641009D54DC /* Networking */,
@@ -245,6 +248,14 @@
 				5E181B7F26D336D900A0515E /* Exercise.swift */,
 			);
 			path = ExercisesAPI;
+			sourceTree = "<group>";
+		};
+		5EF1F2C426D3B86B00B61004 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				5EF1F2C526D3B88A00B61004 /* NSFetchedResultsControllerExtensions.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,6 +393,7 @@
 				5EA23DE426D26B9B003D7DFF /* Exercises.xcdatamodeld in Sources */,
 				5EC71C8B26D2715A009D54DC /* ExercisesOverviewTableViewController.swift in Sources */,
 				5E181B8A26D3372900A0515E /* URLSessionType.swift in Sources */,
+				5EF1F2C626D3B88A00B61004 /* NSFetchedResultsControllerExtensions.swift in Sources */,
 				5EA23DDA26D26B9B003D7DFF /* AppDelegate.swift in Sources */,
 				5E181B9226D3375200A0515E /* URLSession+URLSessionType.swift in Sources */,
 				5EC71C9126D27319009D54DC /* ExerciseViewController.swift in Sources */,

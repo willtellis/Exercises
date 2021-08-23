@@ -41,8 +41,7 @@ class ExercisesOverviewViewController: UIViewController {
 
         switch (segueID, segue.destination) {
         case let (.exercise, controller as ExerciseViewController):
-            // TODO
-            break
+            controller.context = context
 
         case let (.exercisesOverviewTable, controller as ExercisesOverviewTableViewController):
             controller.context = context

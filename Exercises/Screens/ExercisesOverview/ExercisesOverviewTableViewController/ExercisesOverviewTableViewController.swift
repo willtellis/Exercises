@@ -16,32 +16,19 @@ class ExercisesOverviewTableViewController: UITableViewController, NSFetchedResu
 
     // MARK: - Public attributes
 
-    var context: NSManagedObjectContext?
+    /// Managed object context for accessing ExerciseEntities. Must be set before loading the view.
+    var context: NSManagedObjectContext!
 
     // MARK: - Private attributes
 
-    private lazy var fetchedResultsController: NSFetchedResultsController<ExerciseEntity> = {
-        guard let context = context else {
-            fatalError("Expected context")
-        }
-
-        let fetchRequest: NSFetchRequest<ExerciseEntity> = ExerciseEntity.fetchRequest()
-        let sortDescriptor = NSSortDescriptor(key: "identifier", ascending: true)
-        fetchRequest.sortDescriptors = [sortDescriptor]
-        let controller = NSFetchedResultsController(fetchRequest: fetchRequest,
-                                                    managedObjectContext: context,
-                                                    sectionNameKeyPath: nil,
-                                                    cacheName: nil)
-        controller.delegate = self
-        return controller
-    }()
-
+    private lazy var fetchedResultsController = NSFetchedResultsController<ExerciseEntity>.controller(with: context)
 
     // MARK: - View Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         do {
+            fetchedResultsController.delegate = self
             try fetchedResultsController.performFetch()
         } catch {
             fatalError("Core Data fetch error")

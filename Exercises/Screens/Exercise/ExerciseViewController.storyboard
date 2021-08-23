@@ -51,6 +51,7 @@
                     </view>
                     <connections>
                         <outlet property="cancelButton" destination="oQL-Kj-riK" id="eqM-UK-O2z"/>
+                        <outlet property="exerciseImageView" destination="s4Q-cB-vbw" id="3Nq-3K-AoN"/>
                         <outlet property="favoriteButton" destination="3Bo-5n-e1S" id="BHZ-8Q-1oH"/>
                     </connections>
                 </viewController>

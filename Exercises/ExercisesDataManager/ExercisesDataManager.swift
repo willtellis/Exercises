@@ -13,16 +13,7 @@ class ExercisesDataManager: NSObject {
     /// The managed object context for the exercise Core Data entity objects
     let context: NSManagedObjectContext
 
-    private lazy var fetchedResultsController: NSFetchedResultsController<ExerciseEntity> = {
-        let fetchRequest: NSFetchRequest<ExerciseEntity> = ExerciseEntity.fetchRequest()
-        let sortDescriptor = NSSortDescriptor(key: "identifier", ascending: true)
-        fetchRequest.sortDescriptors = [sortDescriptor]
-        let controller = NSFetchedResultsController(fetchRequest: fetchRequest,
-                                                    managedObjectContext: context,
-                                                    sectionNameKeyPath: nil,
-                                                    cacheName: nil)
-        return controller
-    }()
+    private lazy var fetchedResultsController = NSFetchedResultsController<ExerciseEntity>.controller(with: context)
 
     init(context: NSManagedObjectContext) {
         self.context = context
