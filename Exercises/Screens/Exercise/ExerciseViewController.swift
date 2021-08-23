@@ -10,6 +10,17 @@ import UIKit
 
 /// Displays the exercises one a time in sequence
 class ExerciseViewController: UIViewController {
+
+    // MARK: Constants
+
+    enum Constants {
+        static let exerciseTimeInterval = 5.0
+    }
+
+    enum SegueID: String {
+        case unwind
+    }
+
     // MARK: - Public attributes
 
     /// Managed object context for accessing ExerciseEntities. Must be set before loading the view.
@@ -60,13 +71,20 @@ class ExerciseViewController: UIViewController {
 
     private func setupTimer() {
         nextExerciseEntityIndex = 0
-        let timer = Timer(fire: Date(), interval: 5.0, repeats: true) { [weak self] timer in
+        let timer = Timer(fire: Date(), interval: Constants.exerciseTimeInterval, repeats: true) { [weak self] timer in
             guard let self = self, let exerciseEntities = self.exerciseEntities else {
                 timer.invalidate()
                 return
             }
+
+            // Exit after the last exercise is shown
+            guard self.nextExerciseEntityIndex < exerciseEntities.count else {
+                self.performSegue(withIdentifier: SegueID.unwind.rawValue, sender: self)
+                return
+            }
+
             let index = self.nextExerciseEntityIndex
-            self.nextExerciseEntityIndex = (index + 1) % exerciseEntities.count
+            self.nextExerciseEntityIndex = index + 1
             let exerciseEntity = exerciseEntities[index]
             self.currentExerciseEntity = exerciseEntity
             self.configure(with: exerciseEntity)
