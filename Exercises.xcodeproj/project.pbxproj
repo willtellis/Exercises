@@ -136,7 +136,7 @@
 				5EF1F2C426D3B86B00B61004 /* CoreData */,
 				5EC71D0C26D2E4D5009D54DC /* ExercisesDataManager */,
 				5EC71CC426D2A641009D54DC /* Networking */,
-				5EC71C8026D2708B009D54DC /* Screens */,
+				5EC71C8026D2708B009D54DC /* Features */,
 				5EA23DD926D26B9B003D7DFF /* AppDelegate.swift */,
 				5EA23DDB26D26B9B003D7DFF /* SceneDelegate.swift */,
 				5EA23DE526D26B9E003D7DFF /* Assets.xcassets */,
@@ -164,13 +164,13 @@
 			path = ExercisesUITests;
 			sourceTree = "<group>";
 		};
-		5EC71C8026D2708B009D54DC /* Screens */ = {
+		5EC71C8026D2708B009D54DC /* Features */ = {
 			isa = PBXGroup;
 			children = (
 				5EC71C8126D270A6009D54DC /* ExercisesOverview */,
 				5EC71C8F26D272ED009D54DC /* Exercise */,
 			);
-			path = Screens;
+			path = Features;
 			sourceTree = "<group>";
 		};
 		5EC71C8126D270A6009D54DC /* ExercisesOverview */ = {
