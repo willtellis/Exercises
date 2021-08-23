@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ExercisesOverviewViewController: UIViewController {
 
@@ -13,15 +14,21 @@ class ExercisesOverviewViewController: UIViewController {
 
     enum SegueID: String {
         case exercise
+        case exercisesOverviewTable
     }
 
-    // Mark: - Outlets
+    // MARK: - Public attributes
+
+    var context: NSManagedObjectContext?
+
+    // MARK: - Outlets
 
     @IBOutlet private weak var startTrainingButton: UIButton!
 
     // MARK: - Lifecycle methods
 
     override func viewDidLoad() {
+        super.viewDidLoad()
         configureStartTrainingButton()
     }
 
@@ -34,8 +41,11 @@ class ExercisesOverviewViewController: UIViewController {
 
         switch (segueID, segue.destination) {
         case let (.exercise, controller as ExerciseViewController):
-            // TODO: Inject data
+            // TODO
             break
+
+        case let (.exercisesOverviewTable, controller as ExercisesOverviewTableViewController):
+            controller.context = context
 
         default:
             break

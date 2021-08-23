@@ -19,7 +19,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7C1-dh-x4k">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <connections>
-                                    <segue destination="QWg-cP-mWg" kind="embed" id="ghh-Kg-DUc"/>
+                                    <segue destination="QWg-cP-mWg" kind="embed" identifier="exercisesOverviewTable" id="ghh-Kg-DUc"/>
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gAj-1N-N4n">
