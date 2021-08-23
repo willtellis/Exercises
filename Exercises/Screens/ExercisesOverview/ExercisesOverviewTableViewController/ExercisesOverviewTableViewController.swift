@@ -8,7 +8,9 @@
 import CoreData
 import UIKit
 
-class ExercisesOverviewTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+class ExercisesOverviewTableViewController: UITableViewController,
+                                            ExercisesOverviewTableViewCellDelegate,
+                                            NSFetchedResultsControllerDelegate {
 
     enum CellID {
         static let exercisesOverviewTableViewCell = "exercisesOverviewTableViewCell"
@@ -55,14 +57,19 @@ class ExercisesOverviewTableViewController: UITableViewController, NSFetchedResu
         }
 
         let exerciseEntity = fetchedResultsController.object(at: indexPath)
-        let cellModel = ExercisesOverviewTableViewCell.Model(
-            exerciseImageURL: exerciseEntity.coverImageURL.flatMap({ URL(string: $0) }),
-            title: exerciseEntity.name,
-            isFavorite: exerciseEntity.isFavorite
-        )
-        exercisesOverviewTableViewCell.configure(with: cellModel)
+        exercisesOverviewTableViewCell.configure(with: exerciseEntity)
 
         return exercisesOverviewTableViewCell
+    }
+
+    // MARK: - ExercisesOverviewTableViewCellDelegate
+
+    func didUpdateModel(_ model: ExercisesOverviewTableViewCell.Model, for cell: ExercisesOverviewTableViewCell) {
+        do {
+            try context.save()
+        } catch {
+            fatalError("Core Data error")
+        }
     }
 
     // MARK: - NSFetchedResultsControllerDelegate
