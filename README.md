@@ -4,7 +4,7 @@ An app for viewing exercises and favoriting them
 ## Architecture
 This app follows the Model View Controller design pattern. `UIView` objects and `UIViewController` objects are the views and controllers in this implementation of the pattern. Local data persistance being a requirement of this app, managed objects provided by a CoreData `NSManagedObjectContext` represent the models.
 
-## Feature
+## Features
 Each feature is represented by a top level view controller and accompanying storyboard. Feature complexity is managed by modularizing functionality into child view controllers. For example, the `ExercisesOverviewViewController` has a child `ExercisesOverviewTableViewController` that manages the table view.
 
 ## Networking
