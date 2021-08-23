@@ -1,5 +1,5 @@
 //
-//  ImageFetcherTests.swift
+//  ImageAPITests.swift
 //  ExercisesTests
 //
 //  Created by William Ellis on 8/22/21.
@@ -8,7 +8,7 @@
 @testable import Exercises
 import XCTest
 
-class ImageFetcherTests: XCTestCase {
+class ImageAPITests: XCTestCase {
 
     // Force unwrap known good test data objects
     let url = URL(string: "https://www.example.com")!
@@ -24,9 +24,9 @@ class ImageFetcherTests: XCTestCase {
     }
 
     func testfetchImageTask_NoErrorWithData_CompletesWithSuccess() throws {
-        let mockSession = MockImageFetcherSession(data: imageData, urlResponse: nil, error: nil)
+        let mockSession = MockURLSession(data: imageData, urlResponse: nil, error: nil)
         let expectation = XCTestExpectation(description: "Expected to complete successfully")
-        let task = ImageFetcher(imageFetcherSession: mockSession).fetchImageTask(url: url) { result in
+        let task = ImageAPI(urlSession: mockSession).imageTask(url: url) { result in
             guard case .success = result else {
                 XCTFail("Expected data")
                 return
@@ -38,9 +38,9 @@ class ImageFetcherTests: XCTestCase {
     }
 
     func testfetchImageTask_NetworkError_CompletesWithRequestFailure() throws {
-        let mockSession = MockImageFetcherSession(data: nil, urlResponse: nil, error: MockNetworkError())
+        let mockSession = MockURLSession(data: nil, urlResponse: nil, error: MockNetworkError())
         let expectation = XCTestExpectation(description: "Expected to complete successfully")
-        let task = ImageFetcher(imageFetcherSession: mockSession).fetchImageTask(url: url) { result in
+        let task = ImageAPI(urlSession: mockSession).imageTask(url: url) { result in
             guard case .failure(.requestFailure) = result else {
                 XCTFail("Expected request failure")
                 return
@@ -52,9 +52,9 @@ class ImageFetcherTests: XCTestCase {
     }
 
     func testfetchImageTask_NoErrorNoData_CompletesWithNoDataFailure() throws {
-        let mockSession = MockImageFetcherSession(data: nil, urlResponse: nil, error: nil)
+        let mockSession = MockURLSession(data: nil, urlResponse: nil, error: nil)
         let expectation = XCTestExpectation(description: "Expected to complete successfully")
-        let task = ImageFetcher(imageFetcherSession: mockSession).fetchImageTask(url: url) { result in
+        let task = ImageAPI(urlSession: mockSession).imageTask(url: url) { result in
             guard case .failure(.noData) = result else {
                 XCTFail("Expected no data")
                 return
@@ -66,9 +66,9 @@ class ImageFetcherTests: XCTestCase {
     }
 
     func testfetchImageTask_NoErrorBadData_CompletesWithRequestFailure() throws {
-        let mockSession = MockImageFetcherSession(data: badImageData, urlResponse: nil, error: nil)
+        let mockSession = MockURLSession(data: badImageData, urlResponse: nil, error: nil)
         let expectation = XCTestExpectation(description: "Expected to complete successfully")
-        let task = ImageFetcher(imageFetcherSession: mockSession).fetchImageTask(url: url) { result in
+        let task = ImageAPI(urlSession: mockSession).imageTask(url: url) { result in
             guard case .failure(.badData) = result else {
                 XCTFail("Expected bad data")
                 return
@@ -83,7 +83,7 @@ class ImageFetcherTests: XCTestCase {
 private struct MockNetworkError: Error {
 }
 
-private struct MockImageFetcherSession: ImageFetcherSession {
+private struct MockURLSession: URLSessionType {
     let data: Data?
     let urlResponse: URLResponse?
     let error: Error?
@@ -94,13 +94,13 @@ private struct MockImageFetcherSession: ImageFetcherSession {
     }
 
     func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
-        return MockImageFetcherDataTask(completion: {
+        return MockURLSessionDataTask(completion: {
             completionHandler(data, urlResponse, error)
         })
     }
 }
 
-private class MockImageFetcherDataTask: URLSessionDataTask {
+private class MockURLSessionDataTask: URLSessionDataTask {
     private let completion: () -> Void
 
     init(completion: @escaping () -> Void) {

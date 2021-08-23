@@ -22,10 +22,8 @@
 		5EC71C9126D27319009D54DC /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC71C9026D27319009D54DC /* ExerciseViewController.swift */; };
 		5EC71C9926D2732A009D54DC /* ExerciseViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EC71C9826D2732A009D54DC /* ExerciseViewController.storyboard */; };
 		5EC71CA126D2826E009D54DC /* ExercisesOverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC71CA026D2826E009D54DC /* ExercisesOverviewTableViewCell.swift */; };
-		5EC71CA726D28D9B009D54DC /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC71CA626D28D9B009D54DC /* ImageFetcher.swift */; };
-		5EC71CB226D29100009D54DC /* ImageFetcherSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC71CB126D29100009D54DC /* ImageFetcherSession.swift */; };
-		5EC71CB726D2912B009D54DC /* URLSession+ImageFetcherSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC71CB626D2912B009D54DC /* URLSession+ImageFetcherSession.swift */; };
-		5EC71CBD26D29493009D54DC /* ImageFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC71CBC26D29493009D54DC /* ImageFetcherTests.swift */; };
+		5EC71CA726D28D9B009D54DC /* ImageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC71CA626D28D9B009D54DC /* ImageAPI.swift */; };
+		5EC71CBD26D29493009D54DC /* ImageAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC71CBC26D29493009D54DC /* ImageAPITests.swift */; };
 		5EC71CE026D2AEAC009D54DC /* ExercisesOverviewViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EC71CDF26D2AEAC009D54DC /* ExercisesOverviewViewController.storyboard */; };
 		5EC71CE526D2AEBF009D54DC /* ExercisesOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC71CE426D2AEBF009D54DC /* ExercisesOverviewViewController.swift */; };
 		5EC71D0F26D2FB15009D54DC /* ExercisesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC71D0E26D2FB15009D54DC /* ExercisesAPI.swift */; };
@@ -71,10 +69,8 @@
 		5EC71C9026D27319009D54DC /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
 		5EC71C9826D2732A009D54DC /* ExerciseViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExerciseViewController.storyboard; sourceTree = "<group>"; };
 		5EC71CA026D2826E009D54DC /* ExercisesOverviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesOverviewTableViewCell.swift; sourceTree = "<group>"; };
-		5EC71CA626D28D9B009D54DC /* ImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetcher.swift; sourceTree = "<group>"; };
-		5EC71CB126D29100009D54DC /* ImageFetcherSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetcherSession.swift; sourceTree = "<group>"; };
-		5EC71CB626D2912B009D54DC /* URLSession+ImageFetcherSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+ImageFetcherSession.swift"; sourceTree = "<group>"; };
-		5EC71CBC26D29493009D54DC /* ImageFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetcherTests.swift; sourceTree = "<group>"; };
+		5EC71CA626D28D9B009D54DC /* ImageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPI.swift; sourceTree = "<group>"; };
+		5EC71CBC26D29493009D54DC /* ImageAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPITests.swift; sourceTree = "<group>"; };
 		5EC71CDF26D2AEAC009D54DC /* ExercisesOverviewViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExercisesOverviewViewController.storyboard; sourceTree = "<group>"; };
 		5EC71CE426D2AEBF009D54DC /* ExercisesOverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesOverviewViewController.swift; sourceTree = "<group>"; };
 		5EC71D0E26D2FB15009D54DC /* ExercisesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesAPI.swift; sourceTree = "<group>"; };
@@ -188,22 +184,20 @@
 			path = Exercise;
 			sourceTree = "<group>";
 		};
-		5EC71CA526D28D1B009D54DC /* ImageFetcher */ = {
+		5EC71CA526D28D1B009D54DC /* ImageAPI */ = {
 			isa = PBXGroup;
 			children = (
-				5EC71CA626D28D9B009D54DC /* ImageFetcher.swift */,
-				5EC71CB126D29100009D54DC /* ImageFetcherSession.swift */,
-				5EC71CB626D2912B009D54DC /* URLSession+ImageFetcherSession.swift */,
+				5EC71CA626D28D9B009D54DC /* ImageAPI.swift */,
 			);
-			path = ImageFetcher;
+			path = ImageAPI;
 			sourceTree = "<group>";
 		};
-		5EC71CBB26D2946F009D54DC /* ImageFetcher */ = {
+		5EC71CBB26D2946F009D54DC /* ImageAPI */ = {
 			isa = PBXGroup;
 			children = (
-				5EC71CBC26D29493009D54DC /* ImageFetcherTests.swift */,
+				5EC71CBC26D29493009D54DC /* ImageAPITests.swift */,
 			);
-			path = ImageFetcher;
+			path = ImageAPI;
 			sourceTree = "<group>";
 		};
 		5EC71CC426D2A641009D54DC /* Networking */ = {
@@ -213,7 +207,7 @@
 				5E181B8926D3372900A0515E /* URLSessionType.swift */,
 				5E181B9126D3375200A0515E /* URLSession+URLSessionType.swift */,
 				5EC71D0D26D2FAED009D54DC /* ExercisesAPI */,
-				5EC71CA526D28D1B009D54DC /* ImageFetcher */,
+				5EC71CA526D28D1B009D54DC /* ImageAPI */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -221,7 +215,7 @@
 		5EC71CC526D2A65A009D54DC /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				5EC71CBB26D2946F009D54DC /* ImageFetcher */,
+				5EC71CBB26D2946F009D54DC /* ImageAPI */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -387,17 +381,15 @@
 			files = (
 				5EA23DE426D26B9B003D7DFF /* Exercises.xcdatamodeld in Sources */,
 				5EC71C8B26D2715A009D54DC /* ExercisesOverviewTableViewController.swift in Sources */,
-				5EC71CB726D2912B009D54DC /* URLSession+ImageFetcherSession.swift in Sources */,
 				5E181B8A26D3372900A0515E /* URLSessionType.swift in Sources */,
 				5EA23DDA26D26B9B003D7DFF /* AppDelegate.swift in Sources */,
 				5E181B9226D3375200A0515E /* URLSession+URLSessionType.swift in Sources */,
 				5EC71C9126D27319009D54DC /* ExerciseViewController.swift in Sources */,
 				5EC71D0F26D2FB15009D54DC /* ExercisesAPI.swift in Sources */,
-				5EC71CB226D29100009D54DC /* ImageFetcherSession.swift in Sources */,
 				5EC71CA126D2826E009D54DC /* ExercisesOverviewTableViewCell.swift in Sources */,
 				5EC71CE526D2AEBF009D54DC /* ExercisesOverviewViewController.swift in Sources */,
 				5E181B8026D336D900A0515E /* Exercise.swift in Sources */,
-				5EC71CA726D28D9B009D54DC /* ImageFetcher.swift in Sources */,
+				5EC71CA726D28D9B009D54DC /* ImageAPI.swift in Sources */,
 				5EA23DDC26D26B9B003D7DFF /* SceneDelegate.swift in Sources */,
 				5EC71D1726D2FED0009D54DC /* ExercisesDataManager.swift in Sources */,
 				5E181B8526D3370300A0515E /* APIError.swift in Sources */,
@@ -408,7 +400,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EC71CBD26D29493009D54DC /* ImageFetcherTests.swift in Sources */,
+				5EC71CBD26D29493009D54DC /* ImageAPITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

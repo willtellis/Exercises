@@ -19,13 +19,13 @@ class ExercisesOverviewTableViewCell: UITableViewCell {
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var starImageView: UIImageView!
 
-    private var fetchExerciseImageTask: URLSessionDataTask?
+    private var imageTask: URLSessionDataTask?
 
     // MARK: - Overrides
 
     override func prepareForReuse() {
-        fetchExerciseImageTask?.cancel()
-        fetchExerciseImageTask = nil
+        imageTask?.cancel()
+        imageTask = nil
     }
 
     // MARK: - Public instance methods
@@ -36,18 +36,18 @@ class ExercisesOverviewTableViewCell: UITableViewCell {
     }
 
     private func configureExerciseImage(with url: URL?) {
-        fetchExerciseImageTask?.cancel()
-        fetchExerciseImageTask = nil
+        imageTask?.cancel()
+        imageTask = nil
         exerciseImageView.image = nil
         guard let url = url else {
             return
         }
-        fetchExerciseImageTask = ImageFetcher().fetchImageTask(url: url) { [weak self] result in
+        imageTask = ImageAPI().imageTask(url: url) { [weak self] result in
             guard let self = self, case .success(let image) = result else {
                 return
             }
             self.exerciseImageView?.image = image
         }
-        fetchExerciseImageTask?.resume()
+        imageTask?.resume()
     }
 }

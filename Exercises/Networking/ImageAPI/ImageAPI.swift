@@ -1,5 +1,5 @@
 //
-//  Network.swift
+//  ImageAPI.swift
 //  Exercises
 //
 //  Created by William Ellis on 8/22/21.
@@ -8,23 +8,17 @@
 import Foundation
 import UIKit
 
-enum ImageFetcherError: Error {
-    case requestFailure
-    case noData
-    case badData
-}
-
-class ImageFetcher {
-    private let imageFetcherSession: ImageFetcherSession
+class ImageAPI {
+    private let urlSession: URLSessionType
 
     // Inject the shared URLSession as the default
-    init(imageFetcherSession: ImageFetcherSession = URLSession.shared) {
-        self.imageFetcherSession = imageFetcherSession
+    init(urlSession: URLSessionType = URLSession.shared) {
+        self.urlSession = urlSession
     }
 
-    func fetchImageTask(url: URL, completion: @escaping (Result<UIImage, ImageFetcherError>) -> Void) -> URLSessionDataTask {
+    func imageTask(url: URL, completion: @escaping (Result<UIImage, APIError>) -> Void) -> URLSessionDataTask {
         let urlRequest = URLRequest(url: url)
-        return imageFetcherSession.dataTask(with: urlRequest) { (data, urlResponse, error) in
+        return urlSession.dataTask(with: urlRequest) { (data, urlResponse, error) in
             DispatchQueue.main.async {
                 if error != nil {
                     completion(.failure(.requestFailure))
