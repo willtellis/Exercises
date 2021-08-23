@@ -36,6 +36,7 @@ class ExercisesOverviewTableViewCell: UITableViewCell {
         imageTask?.cancel()
         imageTask = nil
         delegate = nil
+        model = nil
     }
 
     // MARK: - Public instance methods
