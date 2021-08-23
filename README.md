@@ -17,6 +17,10 @@ In order to support local storage of user favorites, this app implements a CoreD
 The `ExerciseDataManager` is responsible for retrieving exercise data using the `ExercisesAPI` and adding to or updating the `ExerciseEntity` managed objects.
 
 ## Tests
-The `ExercisesAPI` and `ImageAPI` networking types are each unit tested through mocking using the `URLSessionType` protocol.  Given additional time, `ExercisesDataManager` could be unit tested but currently is not.
+The `ExercisesAPI` and `ImageAPI` networking types are each unit tested through mocking using the `URLSessionType` protocol.
 
-The `ExerciseViewController`'s timer functionality could be broken out and managed by a testable object, but it currently is not.
+## Open Issues
+* The `ExercisesDataManager` could be unit tested.
+* The `ExerciseViewController`'s timer functionality could be broken out and managed by a testable object.
+* UI tests could be added to test happy path features
+* CoreData errors could be handled more gracefully
